@@ -3,12 +3,6 @@ import Scramble from "@/components/scramble";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Achuth Hadnoor - Designer and Engineer",
-  description:
-    "Achuth Hadnoor is a  designer, developer, and creator based in India. He shares about UI/UX design, Solopreneurship, App Development.",
-};
-
 export default function Home() {
   return (
     <main className="flex flex-col justify-center min-h-screen py-10 p-4 md:p-24 text-neutral-600 max-w-5xl mx-auto align-middle">
