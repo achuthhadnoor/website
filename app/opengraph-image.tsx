@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { Roboto_Flex, Roboto_Mono } from "next/font/google";
+import AchuthLogo from "@/components/achuth-logo";
 // Route segment config
 const roboto_mono = Roboto_Mono({ subsets: ["latin"] });
 export const runtime = "edge";
@@ -20,7 +21,7 @@ export default async function Image() {
       <div
         className={roboto_mono.className}
         style={{
-          fontSize: 72,
+          fontSize: 48,
           padding: 10,
           background: "black",
           color: "white",
@@ -31,7 +32,9 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
-        Achuth Hadnoor - Designer and Engineer
+        <AchuthLogo />
+        <br />
+        Achuth Hadnoor <br />- Designer and Engineer
       </div>
     ),
     // ImageResponse options
