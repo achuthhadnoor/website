@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center min-h-screen py-10 p-4 md:p-24 text-neutral-600 max-w-5xl mx-auto align-middle">
+    <main className="flex flex-col justify-center min-h-screen py-10 p-4 md:p-24 max-w-5xl mx-auto align-middle">
       <header>
         <svg
           width="48"

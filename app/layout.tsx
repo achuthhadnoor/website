@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
-import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import cl from "classnames";
+import "./globals.css";
 
 const roboto_mono = Roboto_Mono({ subsets: ["latin"] });
 
@@ -43,7 +44,12 @@ export default function RootLayout({
         <meta name="twitter:image:width" content="<generated>" />
         <meta name="twitter:image:height" content="<generated>" />
       </head>
-      <body className={roboto_mono.className}>
+      <body
+        className={cl(
+          roboto_mono.className,
+          "dark:bg-neutral-900 dark:text-neutral-400 bg-neutral-100 text-neutral-600"
+        )}
+      >
         {children}
         <Analytics />
       </body>
