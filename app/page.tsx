@@ -32,22 +32,34 @@ export default function Home() {
           <Scramble value="Designer and Engineer working on products as a Solopreneur." />
         </p>
         <div className="flex gap-5 text-xl items-center">
-          <Link href={"https://x.com/achuth_hadnoor"}>
+          <Link href={"https://x.com/achuth_hadnoor"} aria-label="x.com">
             <Social name="x" />
           </Link>
-          <Link href={"https://dribbble.com/achuth_hadnoor"}>
+          <Link
+            href={"https://dribbble.com/achuth_hadnoor"}
+            aria-label="Dribbble"
+          >
             <Social name="dribbble" />
           </Link>
-          <Link href={"https://github.com/achuthhadnoor"}>
+          <Link
+            href={"https://github.com/achuthhadnoor"}
+            aria-label="Achuth on github"
+          >
             <Social name="github" />
           </Link>
-          <Link href={"https://linkedin.com/in/achuth-hadnoor"}>
+          <Link
+            href={"https://linkedin.com/in/achuth-hadnoor"}
+            aria-label="Achuth on linkedin"
+          >
             <Social name="linkedin" />
           </Link>
-          <Link href={"https://instagram.com/uiuxdx"}>
+          <Link
+            href={"https://instagram.com/uiuxdx"}
+            aria-label="Achuth on instagram as UIUXDX"
+          >
             <Social name="instagram" />
           </Link>
-          <Link href={"mailto:hey@achuth.dev"}>
+          <Link href={"mailto:hey@achuth.dev"} aria-label="Mail to achuth">
             <Social name="mail" />
           </Link>
         </div>
