@@ -18,6 +18,13 @@ export const metadata: Metadata = {
   title: "Achuth Hadnoor - Designer and Engineer",
   description:
     "Achuth Hadnoor is a  designer, developer, and creator based in India. He shares about UI/UX design, Solopreneurship, App Development.",
+  openGraph: {
+    type: "website",
+    url: "https://achuth.dev",
+    title: "Achuth Hadnoor",
+    description: "Designer and Engineer working on digital products",
+    siteName: "Achuth's portfolio",
+  },
 };
 
 export default function RootLayout({

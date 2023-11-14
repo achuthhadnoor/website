@@ -20,7 +20,8 @@ export default async function Image() {
       <div
         className={roboto_mono.className}
         style={{
-          fontSize: 128,
+          fontSize: 72,
+          padding: 10,
           background: "black",
           color: "white",
           width: "100%",
