@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fade-in {
+  animation: 0.65s fadeIn;
+}
+@keyframes fadeIn {
+  0% {
+    @apply opacity-0;
+    transform: scale(0.95) translate3d(0px, 10px, 0px);
+  }
+  100% {
+    @apply opacity-100;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}

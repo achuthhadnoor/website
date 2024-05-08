@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={cl(
           roboto_mono.className,
-          "dark:bg-neutral-900 dark:text-neutral-400 bg-neutral-100 text-neutral-600"
+          "dark:bg-neutral-900 dark:text-neutral-400 bg-neutral-100 text-neutral-600 overflow-hidden"
         )}
       >
         {children}

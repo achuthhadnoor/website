@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center min-h-screen py-10 p-4 md:p-24 max-w-5xl mx-auto align-middle">
-      <header>
+    <main className="flex flex-col justify-center min-h-screen py-10 p-4 md:p-24 max-w-5xl mx-auto align-middle ">
+      <header className="fade-in transform-gpu delay-0 origin-center ease-linear">
         <svg
           width="48"
           height="48"
@@ -23,7 +23,7 @@ export default function Home() {
           />
         </svg>
       </header>
-      <section className="py-5">
+      <section className="py-5 fade-in transform-gpu delay-700 ease-linear" >
         <h1 className="text-2xl font-bold">
           <Scramble value="Achuth Hadnoor" />
         </h1>
