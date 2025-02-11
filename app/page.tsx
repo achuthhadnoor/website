@@ -1,7 +1,7 @@
 'use client'
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
-import Social from '../components/Social';
+import Social from './components/Social';
 
 export default function Home() {
   const Apps = [
@@ -20,20 +20,19 @@ export default function Home() {
   ]
   return (
     <AnimatePresence mode="wait">
-      <motion.main className="py-10 max-w-lg mx-auto px-4"
+      <motion.main className="py-10 max-w-lg mx-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
         transition={{
           duration: 0.75,
           ease: "easeOut",
-          staggerChildren: 0.03
+          staggerChildren: 0.2
         }}>
         <section className='flex flex-col gap-4 py-10 max-w-lg'>
           <motion.span className=" text-neutral-400"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.1 }}>
+            animate={{ opacity: 1 }}>
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_4091_70)">
                 <path d="M22.2865 18.1055C23.0563 16.7721 24.9808 16.7721 25.7506 18.1055L32.6322 30.0249C33.402 31.3582 32.4398 33.0249 30.9002 33.0249H17.1369C15.5973 33.0249 14.635 31.3582 15.4048 30.0249L22.2865 18.1055Z" fill="currentColor" />
@@ -50,39 +49,38 @@ export default function Home() {
           <motion.h1
             className="text-lg font-bold"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >Achuth Hadnoor</motion.h1>
+            animate={{ opacity: 1 }}>
+            Achuth Hadnoor
+          </motion.h1>
           <motion.p
             className=" text-neutral-500 "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
           >
             <i className="cursive dark:text-neutral-200 text-neutral-900 ">Crafting digital Products,</i> I love building digital products for designers, developers, productivity and more..
           </motion.p>
           <motion.p
             className='py-1'
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }} >
+            animate={{ opacity: 1 }}>
             In past, as <i className='cursive'>Design Engineer</i> {`I've`} developed <span className='text-neutral-400'>animations</span> for design system, contributed to the <span className='text-neutral-400'>website</span> and built the <span className='text-neutral-400'>mobile app</span> from scratch at  <Link href="https://opendoor.com" className='underline' target="_blank">Opendoor</Link> .
           </motion.p>
         </section>
         <section id="writings" className='py-10 max-w-lg'>
-          <h2 className='text-neutral-400'>Products</h2>
+          <motion.h2 className='text-neutral-400'>Products</motion.h2>
           <motion.div className='flex flex-col gap-5 py-4' >
             {Apps.map(({ title, summary, url, id }, i) => (
               <Link href={url} key={id}>
                 <motion.div className='flex flex-col gap-1 ' transition={{
                   duration: 0.75,
-                  staggerChildren: 0.1
+                  staggerChildren: 0.1,
+                  delayChildren: i * 0.6
                 }}
                 >
-                  <div className='flex gap-2 group '>
+                  <motion.div className='flex gap-2 group ' >
                     <h3 className='text-md font-semibold cursive'>{title} </h3>
                     <span className='transform -rotate-45 hidden group-hover:inline'>{'→'}</span>
-                  </div>
+                  </motion.div>
                   <p className='text-sm text-neutral-400'>{summary}</p>
                 </motion.div>
               </Link>
@@ -90,7 +88,7 @@ export default function Home() {
           </motion.div>
         </section>
         <section className='max-w-lg'>
-          <h2 className='text-neutral-400'>Connect</h2>
+          <motion.h2 transition={{ delay: 0.4 }} className='text-neutral-400'>Connect</motion.h2>
           <Social />
         </section>
       </motion.main >
