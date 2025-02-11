@@ -20,7 +20,7 @@ export default function Home() {
   ]
   return (
     <AnimatePresence mode="wait">
-      <motion.main className="py-10 max-w-lg mx-auto"
+      <motion.main className="py-10 max-w-lg mx-auto px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
