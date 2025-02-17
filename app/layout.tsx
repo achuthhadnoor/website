@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Roboto_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import cl from "classnames";
 import "./globals.css";
 
-const roboto_mono = Roboto_Mono({ subsets: ["latin"] });
+const inter = Inter({
+  variable: "--font-inter-sans",
+  subsets: ["latin"],
+});
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://achuth.dev"),
@@ -37,15 +41,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body
-        className={cl(
-          roboto_mono.className,
-          "dark:bg-neutral-900 dark:text-neutral-400 bg-neutral-100 text-neutral-600 overflow-hidden"
-        )}
-      >
+      <body className="dark:bg-neutral-900 dark:text-neutral-400 bg-neutral-100 text-neutral-600 overflow-hidden font-[family-name:var(--font-inter-sans)] ">
         {children}
         <Analytics />
       </body>
-    </html>
+    </html >
   );
 }
