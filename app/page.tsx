@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link';
-
+import { motion } from 'motion/react'
 export default function Home() {
   const Apps = [
     {
@@ -48,7 +48,11 @@ export default function Home() {
   </svg>
   return (
     <main className="flex flex-col gap-4 flex-1 py-10 max-w-md mx-auto px-4 font-mono text-sm text-neutral-900 dark:text-neutral-200 leading-loose">
-      <section className='flex flex-col gap-4 '>
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className='flex flex-col gap-4'>
         <span className="text-neutral-600 dark:text-neutral-400">
           <Logo />
         </span>
@@ -56,47 +60,48 @@ export default function Home() {
           Achuth Hadnoor
         </h1>
         <p className="text-neutral-500 ">
-          <em className=" dark:text-neutral-200 text-neutral-900 ">Crafting digital Products,</em> I love building digital products for designers, developers, productivity and more..
+          <em className="dark:text-neutral-200 text-neutral-900">Crafting digital Products,</em> I love building digital products for designers, developers, productivity and more..
         </p>
         <p className='py-1'>
-          In past, as <em>Design Engineer</em> {`I've`} developed <span className='text-neutral-500 '>animations</span> for design system, contributed to the <span className='text-neutral-500 '>website</span> and built the <span className='text-neutral-500 '>mobile app</span> from scratch at  <Link href="https://opendoor.com" className='text-neutral-500 underline ' target="_blank">Opendoor</Link> .
+          In past, as <em>Design Engineer</em> {`I've`} developed <span className='text-neutral-500'>animations</span> for design system, contributed to the <span className='text-neutral-500'>website</span> and built the <span className='text-neutral-500'>mobile app</span> from scratch at <Link href="https://opendoor.com" className='text-neutral-500 underline' target="_blank">Opendoor</Link>.
         </p>
-      </section>
-      <section id="writings" className='pb-10 max-w-xl'>
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        id="writings"
+        className='pb-10 max-w-xl'>
         <h2 className='font-bold text-xl'>Apps</h2>
         <div className='flex flex-col gap-5 py-4'>
           {Apps.map(({ title, summary, url, id, price }, index) => (
-            <Link href={url} key={id}>
-              <div className='flex flex-col gap-1'>
-                <div className='flex gap-2 group'>
-                  <h3 className='text-md font-semibold cursive'>{`${index + 1} ‒ ${title}`}</h3>
-                  <span className='transform -rotate-45 hidden group-hover:inline'>{'→'}</span>
+            <motion.div
+              key={id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}>
+              <Link href={url}>
+                <div className='flex flex-col gap-1'>
+                  <div className='flex gap-2 group'>
+                    <h3 className='text-md font-semibold cursive'>{`${index + 1} ‒ ${title}`}</h3>
+                    <span className='transform -rotate-45 hidden group-hover:inline'>{'→'}</span>
+                  </div>
+                  <p className='text-sm text-neutral-500'>{summary} — <strong className='dark:text-neutral-300'>{price}</strong></p>
                 </div>
-                <p className='text-sm text-neutral-500'>{summary} — <strong className='dark:text-neutral-300 '>{price}</strong></p>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
         </div>
-      </section>
-      {/* <section id="writings" className='pb-10 max-w-xl'>
-        <h2 className='font-bold text-xl'>Writings</h2>
-        <div className='flex flex-col gap-5 py-4'>
-          {Blogs.map(({ title, summary, url, id }, index) => (
-            <Link href={url} key={id}>
-              <div className='flex flex-col gap-1'>
-                <div className='flex gap-2 group'>
-                  <h3 className='text-md font-semibold cursive'>{`${index + 1} ‒ ${title}`}</h3>
-                  <span className='transform -rotate-45 hidden group-hover:inline'>{'→'}</span>
-                </div>
-                <p className='text-sm text-neutral-500'>{summary}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section> */}
-      <section className="flex justify-between py-4 border-t border-neutral-500">
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="flex justify-between py-4 border-t border-neutral-500">
         <h5 className="text-neutral-400">Made with 💜 + 🥶</h5>
         <p>© Achuth Hadnoor {new Date().getFullYear()}</p>
-      </section>
-    </main>)
+      </motion.section>
+    </main >)
 }
