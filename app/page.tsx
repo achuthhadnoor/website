@@ -47,7 +47,7 @@ export default function Home() {
     </defs>
   </svg>
   return (
-    <main className="flex flex-col gap-4 flex-1 py-10 max-w-md mx-auto px-4 font-mono text-sm text-neutral-900 dark:text-neutral-200 leading-loose">
+    <>
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -103,5 +103,5 @@ export default function Home() {
         <h5 className="text-neutral-400">Made with 💜 + 🥶</h5>
         <p>© Achuth Hadnoor {new Date().getFullYear()}</p>
       </motion.section>
-    </main >)
+    </>)
 }
