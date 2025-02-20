@@ -51,7 +51,7 @@ export default function Home() {
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.5, delay: 0 }}
         className='flex flex-col gap-4'>
         <span className="text-neutral-600 dark:text-neutral-400">
           <Logo />
@@ -70,7 +70,7 @@ export default function Home() {
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
         id="writings"
         className='pb-10 max-w-xl'>
         <h2 className='font-bold text-xl'>Apps</h2>
@@ -80,7 +80,7 @@ export default function Home() {
               key={id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}>
+              transition={{ duration: 0.5, delay: 1 + (index * 0.5) }}>
               <Link href={url}>
                 <div className='flex flex-col gap-1'>
                   <div className='flex gap-2 group'>
@@ -98,7 +98,46 @@ export default function Home() {
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        transition={{ duration: 0.5, delay: 2 }}
+        id="writings"
+        className='pb-10 max-w-xl'>
+        <h2 className='font-bold text-xl'>Resources</h2>
+        <div className='flex flex-col gap-5 py-4'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 2.5 }}>
+            <Link href="/design-systems">
+              <div className='flex flex-col gap-1'>
+                <div className='flex gap-2 group'>
+                  <h3 className='text-md font-semibold cursive'> Design Systems</h3>
+                  <span className='transform -rotate-45 hidden group-hover:inline'>{'→'}</span>
+                </div>
+                <p className='text-sm text-neutral-500'> A collection of resources related to design system from zero to one. </p>
+              </div>
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 3 }}>
+            <Link href="/design-systems">
+              <div className='flex flex-col gap-1'>
+                <div className='flex gap-2 group'>
+                  <h3 className='text-md font-semibold cursive'> Product management <span className='text-xs p-1 bg-indigo-400 text-indigo-700 rounded'>coming soon</span></h3>
+                  <span className='transform -rotate-45 hidden group-hover:inline'>{'→'}</span>
+                </div>
+                <p className='text-sm text-neutral-500'> A project management directory</p>
+              </div>
+            </Link>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 3.5 }}
         className="flex justify-between py-4 border-t border-neutral-500">
         <h5 className="text-neutral-400">Made with 💜 + 🥶</h5>
         <p>© Achuth Hadnoor {new Date().getFullYear()}</p>

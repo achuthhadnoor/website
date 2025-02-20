@@ -230,14 +230,14 @@ export default function DesignSyatem() {
                 <h1 className='text-2xl'>Design Systems</h1>
                 <p className='text-neutral-800 dark:text-neutral-300'>Quick inspirations, links, tutorials and resources to learn and apply design systems.</p>
             </div>
-            {designSystem.map((system => <details key={system.section} open className='border-b border-b-neutral-300'>
+            {designSystem.map((system => <details key={system.section} open className='border-b border-b-neutral-300 dark:border-b-neutral-700'>
                 <summary className='py-4 cursor-pointer '>
                     {system.section}
                 </summary>
-                <ul className='gap-1 flex flex-col'>
+                <ul className='gap-2 flex flex-col'>
                     {
                         system.links.map(({ title, link }) => <Link href={link} key={link} target='_blank' >
-                            <li className='p-2 space-y-1 border-neutral-200 border rounded-md'>
+                            <li className='p-2 space-y-1 border-neutral-200 dark:border-neutral-700 border rounded-md hover:border-indigo-500'>
                                 <h3>{title}</h3>
                                 <p className='text-xs text-neutral-500'>{link}</p>
                             </li>
